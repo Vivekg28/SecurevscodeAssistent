@@ -1,0 +1,22 @@
+rules:
+  - id: vulnerable-library-detect
+    patterns:
+      - pattern-inside: |
+          {
+            "dependencies": {
+              "$LIB": "$VERSION"
+            }
+          }
+    message: "vulnerable or outdated library detected: $LIB@$VERSION. Please upgrade to a safe version."
+    severity: WARNING
+    languages: [json]
+    metadata:
+      vulnerability:
+        cve: "CVE-XXXX-XXXX"
+        references:
+          - "https://nvd.nist.gov/vuln/detail/CVE-XXXX-XXXX"
+    conditions:
+      # Simulate outdated version by matching below a certain version pattern (e.g., below 2.0.0)
+      pattern-either:
+        - pattern: '"$LIB": "1.*"'
+        - pattern: '"$LIB": "0.*"'

@@ -1,0 +1,5 @@
+  "library": ">=2.0.0"  // updated to safe version
+  "dependencies": {
+    "vulnerable-lib": "1.5.0"  
+  }
+}

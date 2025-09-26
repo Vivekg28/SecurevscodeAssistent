@@ -1,0 +1,1 @@
+process.env.API_KEY  /* replaced by secureCoding extension */

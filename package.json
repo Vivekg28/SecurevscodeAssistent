@@ -1,0 +1,28 @@
+{
+  "name": "secure-coding-extension",
+  "displayName": "Secure Coding Assistant",
+  "description": "Detects and fixes common insecure patterns using Semgrep and prompt enrichment.",
+  "version": "0.0.1",
+  "main": "./out/extension.js",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "activationEvents": ["*"],
+  "contributes": {
+    "commands": [
+      {
+        "command": "secureCoding.scanAndFix",
+        "title": "Scan and Fix Security Issues"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "npx tsc",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "@types/vscode": "^1.104.0",
+    "typescript": "^5.9.2"
+  }
+}
